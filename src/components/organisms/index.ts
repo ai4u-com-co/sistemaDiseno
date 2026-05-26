@@ -11,3 +11,7 @@ export { default as ModelingInterface } from './ModelingInterface';
 export { default as Navbar } from './Navbar';
 export { default as ScrollRevealHero } from './ScrollRevealHero';
 export { default as HeroFullscreen } from './HeroFullscreen';
+export { default as VisionBanner } from './VisionBanner';
+export { default as DashboardTopBar } from './DashboardTopBar';
+export { default as DashboardSidebar } from './DashboardSidebar';
+export type { SidebarNavItem, SidebarGroup, SidebarStat } from './DashboardSidebar';
