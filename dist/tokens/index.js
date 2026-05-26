@@ -50,6 +50,21 @@ const e = {
     info: "#3DAED1",
     warning: "#FF6E00"
   },
+  // Telemetría (dashboards de monitoreo — NO marca)
+  // Semántica universal de operación: verde=ok, rojo=falla, ámbar=transición.
+  // Usar SOLO en superficies de dashboard/observabilidad, nunca en CTAs ni feedback de marca.
+  telemetry: {
+    online: "#22C55E",
+    // verde — servicio operativo
+    offline: "#EF4444",
+    // rojo — servicio caído
+    starting: "#F59E0B",
+    // ámbar — en arranque/transición
+    checking: "#94A3B8",
+    // gris azulado — verificando
+    idle: "#A3A3A3"
+    // gris — inactivo/desconocido
+  },
   // Backward compat — accentColors (legacy)
   accentColors: {
     orange: "#FF6E00",
@@ -582,7 +597,7 @@ const e = {
   zIndex: c,
   transitions: g,
   breakpoints: s
-}, k = (r) => ({
+}, f = (r) => ({
   ...m,
   colors: {
     mode: r,
@@ -634,7 +649,7 @@ export {
   a as TYPOGRAPHY_TOKENS,
   h as TYPOGRAPHY_UTILITIES,
   c as Z_INDEX_TOKENS,
-  k as createAI4UTokens,
+  f as createAI4UTokens,
   x as useComponentColors,
   p as useContrastColors
 };

@@ -37,6 +37,13 @@ export declare const AI4U_PALETTE: {
         readonly info: "#3DAED1";
         readonly warning: "#FF6E00";
     };
+    readonly telemetry: {
+        readonly online: "#22C55E";
+        readonly offline: "#EF4444";
+        readonly starting: "#F59E0B";
+        readonly checking: "#94A3B8";
+        readonly idle: "#A3A3A3";
+    };
     readonly accentColors: {
         readonly orange: "#FF6E00";
         readonly mint: "#EAF4EB";
