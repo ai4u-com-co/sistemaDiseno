@@ -18,3 +18,4 @@ export { default as FilterStats } from './FilterStats';
 export { default as ExpandableSection } from './ExpandableSection';
 export { default as ProgressiveContent } from './ProgressiveContent';
 export { default as ModuleCard } from './ModuleCard';
+export { default as AuthCard } from './AuthCard';

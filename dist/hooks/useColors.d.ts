@@ -41,6 +41,28 @@ export declare const useColors: () => {
             readonly info: "#3DAED1";
             readonly warning: "#FF6E00";
         };
+        readonly tamaprint: {
+            readonly primary: "#00ADEF";
+            readonly primaryDark: "#0082C8";
+            readonly primaryLight: "#33BFFF";
+            readonly dark: "#231F20";
+            readonly primary8: "rgba(0, 173, 239, 0.08)";
+            readonly primary15: "rgba(0, 173, 239, 0.15)";
+            readonly primary25: "rgba(0, 173, 239, 0.25)";
+            readonly primary40: "rgba(0, 173, 239, 0.40)";
+        };
+        readonly slate: {
+            readonly 50: "#F8FAFC";
+            readonly 100: "#F1F5F9";
+            readonly 200: "#E2E8F0";
+            readonly 300: "#CBD5E1";
+            readonly 400: "#94A3B8";
+            readonly 500: "#64748B";
+            readonly 600: "#475569";
+            readonly 700: "#334155";
+            readonly 800: "#1E293B";
+            readonly 900: "#0F172A";
+        };
         readonly telemetry: {
             readonly online: "#22C55E";
             readonly offline: "#EF4444";
@@ -101,6 +123,28 @@ export declare const useColors: () => {
         };
         readonly border: "rgba(255,255,255,0.30)";
         readonly divider: "rgba(255,255,255,0.20)";
+        readonly effectiveMode: "dark";
+    } | {
+        readonly background: "#F1F5F9";
+        readonly surface: "#FFFFFF";
+        readonly text: {
+            readonly primary: "#0F172A";
+            readonly secondary: "#64748B";
+            readonly disabled: "#94A3B8";
+        };
+        readonly border: "#E2E8F0";
+        readonly divider: "#E2E8F0";
+        readonly effectiveMode: "light";
+    } | {
+        readonly background: "#171717";
+        readonly surface: "#1E1E1E";
+        readonly text: {
+            readonly primary: "#F1F5F9";
+            readonly secondary: "#94A3B8";
+            readonly disabled: "#64748B";
+        };
+        readonly border: "rgba(255, 255, 255, 0.07)";
+        readonly divider: "rgba(255, 255, 255, 0.12)";
         readonly effectiveMode: "dark";
     };
     components: {
@@ -165,14 +209,14 @@ export declare const useColors: () => {
     };
     helpers: {
         background: {
-            primary: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF";
-            secondary: "#FF6E00" | "#FFFFFF" | "#2A2A2A";
+            primary: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF" | "#F1F5F9";
+            secondary: "#FF6E00" | "#FFFFFF" | "#2A2A2A" | "#1E1E1E";
             accent: string;
         };
         text: {
-            primary: "#171717" | "#FFFFFF";
-            secondary: "#94989B" | "rgba(255,255,255,0.75)";
-            disabled: "#A3A3A3" | "#525252" | "rgba(255,255,255,0.45)";
+            primary: "#171717" | "#FFFFFF" | "#F1F5F9" | "#0F172A";
+            secondary: "#94989B" | "#94A3B8" | "#64748B" | "rgba(255,255,255,0.75)";
+            disabled: "#A3A3A3" | "#525252" | "#94A3B8" | "#64748B" | "rgba(255,255,255,0.45)";
             accent: "#171717" | "#FFFFFF";
             highContrast: string;
             mediumContrast: string;
@@ -180,8 +224,8 @@ export declare const useColors: () => {
             darkMediumContrast: string;
         };
         border: {
-            primary: "rgba(23, 23, 23, 0.10)" | "rgba(255, 255, 255, 0.12)" | "rgba(255,255,255,0.30)";
-            secondary: "rgba(23, 23, 23, 0.10)" | "rgba(255, 255, 255, 0.08)" | "rgba(255,255,255,0.20)";
+            primary: "rgba(23, 23, 23, 0.10)" | "#E2E8F0" | "rgba(255, 255, 255, 0.12)" | "rgba(255,255,255,0.30)" | "rgba(255, 255, 255, 0.07)";
+            secondary: "rgba(23, 23, 23, 0.10)" | "#E2E8F0" | "rgba(255, 255, 255, 0.12)" | "rgba(255, 255, 255, 0.08)" | "rgba(255,255,255,0.20)";
             accent: "#A3A3A3" | "#525252";
         };
         state: {
@@ -230,11 +274,11 @@ export declare const useComponentVariant: (componentType: "button" | "card", var
 export declare const useContrastPair: () => {
     mode: import('@mui/material').PaletteMode;
     light: {
-        background: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF";
-        text: "#171717" | "#FFFFFF";
+        background: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF" | "#F1F5F9";
+        text: "#171717" | "#FFFFFF" | "#F1F5F9" | "#0F172A";
     };
     dark: {
-        background: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF";
-        text: "#171717" | "#FFFFFF";
+        background: "#EAF4EB" | "#171717" | "#FF6E00" | "#FFFFFF" | "#F1F5F9";
+        text: "#171717" | "#FFFFFF" | "#F1F5F9" | "#0F172A";
     };
 };

@@ -37,6 +37,28 @@ export declare const AI4U_PALETTE: {
         readonly info: "#3DAED1";
         readonly warning: "#FF6E00";
     };
+    readonly tamaprint: {
+        readonly primary: "#00ADEF";
+        readonly primaryDark: "#0082C8";
+        readonly primaryLight: "#33BFFF";
+        readonly dark: "#231F20";
+        readonly primary8: "rgba(0, 173, 239, 0.08)";
+        readonly primary15: "rgba(0, 173, 239, 0.15)";
+        readonly primary25: "rgba(0, 173, 239, 0.25)";
+        readonly primary40: "rgba(0, 173, 239, 0.40)";
+    };
+    readonly slate: {
+        readonly 50: "#F8FAFC";
+        readonly 100: "#F1F5F9";
+        readonly 200: "#E2E8F0";
+        readonly 300: "#CBD5E1";
+        readonly 400: "#94A3B8";
+        readonly 500: "#64748B";
+        readonly 600: "#475569";
+        readonly 700: "#334155";
+        readonly 800: "#1E293B";
+        readonly 900: "#0F172A";
+    };
     readonly telemetry: {
         readonly online: "#22C55E";
         readonly offline: "#EF4444";
@@ -127,6 +149,30 @@ export declare const SURFACE_PRESETS: {
         };
         readonly border: "rgba(255,255,255,0.30)";
         readonly divider: "rgba(255,255,255,0.20)";
+        readonly effectiveMode: "dark";
+    };
+    readonly dashboard: {
+        readonly background: "#F1F5F9";
+        readonly surface: "#FFFFFF";
+        readonly text: {
+            readonly primary: "#0F172A";
+            readonly secondary: "#64748B";
+            readonly disabled: "#94A3B8";
+        };
+        readonly border: "#E2E8F0";
+        readonly divider: "#E2E8F0";
+        readonly effectiveMode: "light";
+    };
+    readonly dashboardDark: {
+        readonly background: "#171717";
+        readonly surface: "#1E1E1E";
+        readonly text: {
+            readonly primary: "#F1F5F9";
+            readonly secondary: "#94A3B8";
+            readonly disabled: "#64748B";
+        };
+        readonly border: "rgba(255, 255, 255, 0.07)";
+        readonly divider: "rgba(255, 255, 255, 0.12)";
         readonly effectiveMode: "dark";
     };
     readonly volt: {

@@ -21,3 +21,4 @@ export { default as StatusDot } from './StatusDot';
 export type { TelemetryStatus } from './StatusDot';
 export { default as DashboardIcon } from './DashboardIcon';
 export type { DashboardIconId } from './DashboardIcon';
+export { default as Branding } from './Branding';

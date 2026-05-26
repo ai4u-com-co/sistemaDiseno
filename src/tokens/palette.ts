@@ -51,6 +51,35 @@ export const AI4U_PALETTE = {
     warning: '#FF6E00',
   },
 
+  // Tamaprint — paleta de cliente (Tamaprint es cliente histórico de AI4U).
+  // Slot oficial dentro del DS para mantener consistencia en proyectos Tamaprint
+  // (Mission Control, login, dashboards internos, cotizador).
+  tamaprint: {
+    primary:     '#00ADEF',   // azul corporativo Tamaprint
+    primaryDark: '#0082C8',
+    primaryLight:'#33BFFF',
+    dark:        '#231F20',
+    primary8:    'rgba(0, 173, 239, 0.08)',
+    primary15:   'rgba(0, 173, 239, 0.15)',
+    primary25:   'rgba(0, 173, 239, 0.25)',
+    primary40:   'rgba(0, 173, 239, 0.40)',
+  },
+
+  // Slate scale (superficies de dashboards de monitoreo).
+  // Complementa a `gray` (neutro) cuando se necesita un tinte azul-frío.
+  slate: {
+    50:  '#F8FAFC',
+    100: '#F1F5F9',
+    200: '#E2E8F0',
+    300: '#CBD5E1',
+    400: '#94A3B8',
+    500: '#64748B',
+    600: '#475569',
+    700: '#334155',
+    800: '#1E293B',
+    900: '#0F172A',
+  },
+
   // Telemetría (dashboards de monitoreo — NO marca)
   // Semántica universal de operación: verde=ok, rojo=falla, ámbar=transición.
   // Usar SOLO en superficies de dashboard/observabilidad, nunca en CTAs ni feedback de marca.
@@ -157,6 +186,34 @@ export const SURFACE_PRESETS = {
     divider: 'rgba(255,255,255,0.20)',
     effectiveMode: 'dark' as const,
   },
+  // Dashboard claro — superficie operativa con tinte slate (Mission Control).
+  dashboard: {
+    background: '#F1F5F9',                  // slate-100
+    surface:    '#FFFFFF',
+    text: {
+      primary:   '#0F172A',                 // slate-900
+      secondary: '#64748B',                 // slate-500
+      disabled:  '#94A3B8',                 // slate-400
+    },
+    border:  '#E2E8F0',                     // slate-200
+    divider: '#E2E8F0',
+    effectiveMode: 'light' as const,
+  },
+
+  // Dashboard oscuro — superficie para sidebars/topbars de monitoreo.
+  dashboardDark: {
+    background: '#171717',                  // erieBlack
+    surface:    '#1E1E1E',
+    text: {
+      primary:   '#F1F5F9',                 // slate-100
+      secondary: '#94A3B8',                 // slate-400
+      disabled:  '#64748B',                 // slate-500
+    },
+    border:  'rgba(255, 255, 255, 0.07)',
+    divider: 'rgba(255, 255, 255, 0.12)',
+    effectiveMode: 'dark' as const,
+  },
+
   // Alias legacy — 'volt' renombrado internamente a mintCream
   volt: {
     background: AI4U_PALETTE.mintCream,

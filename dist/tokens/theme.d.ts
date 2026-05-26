@@ -100,6 +100,28 @@ export declare const AI4U_DESIGN_TOKENS: {
             readonly info: "#3DAED1";
             readonly warning: "#FF6E00";
         };
+        readonly tamaprint: {
+            readonly primary: "#00ADEF";
+            readonly primaryDark: "#0082C8";
+            readonly primaryLight: "#33BFFF";
+            readonly dark: "#231F20";
+            readonly primary8: "rgba(0, 173, 239, 0.08)";
+            readonly primary15: "rgba(0, 173, 239, 0.15)";
+            readonly primary25: "rgba(0, 173, 239, 0.25)";
+            readonly primary40: "rgba(0, 173, 239, 0.40)";
+        };
+        readonly slate: {
+            readonly 50: "#F8FAFC";
+            readonly 100: "#F1F5F9";
+            readonly 200: "#E2E8F0";
+            readonly 300: "#CBD5E1";
+            readonly 400: "#94A3B8";
+            readonly 500: "#64748B";
+            readonly 600: "#475569";
+            readonly 700: "#334155";
+            readonly 800: "#1E293B";
+            readonly 900: "#0F172A";
+        };
         readonly telemetry: {
             readonly online: "#22C55E";
             readonly offline: "#EF4444";
@@ -489,6 +511,28 @@ export declare const createAI4UTokens: (mode: "light" | "dark") => {
             readonly danger: "#FF6E00";
             readonly info: "#3DAED1";
             readonly warning: "#FF6E00";
+        };
+        readonly tamaprint: {
+            readonly primary: "#00ADEF";
+            readonly primaryDark: "#0082C8";
+            readonly primaryLight: "#33BFFF";
+            readonly dark: "#231F20";
+            readonly primary8: "rgba(0, 173, 239, 0.08)";
+            readonly primary15: "rgba(0, 173, 239, 0.15)";
+            readonly primary25: "rgba(0, 173, 239, 0.25)";
+            readonly primary40: "rgba(0, 173, 239, 0.40)";
+        };
+        readonly slate: {
+            readonly 50: "#F8FAFC";
+            readonly 100: "#F1F5F9";
+            readonly 200: "#E2E8F0";
+            readonly 300: "#CBD5E1";
+            readonly 400: "#94A3B8";
+            readonly 500: "#64748B";
+            readonly 600: "#475569";
+            readonly 700: "#334155";
+            readonly 800: "#1E293B";
+            readonly 900: "#0F172A";
         };
         readonly telemetry: {
             readonly online: "#22C55E";

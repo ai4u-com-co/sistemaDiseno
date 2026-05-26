@@ -50,6 +50,34 @@ const e = {
     info: "#3DAED1",
     warning: "#FF6E00"
   },
+  // Tamaprint — paleta de cliente (Tamaprint es cliente histórico de AI4U).
+  // Slot oficial dentro del DS para mantener consistencia en proyectos Tamaprint
+  // (Mission Control, login, dashboards internos, cotizador).
+  tamaprint: {
+    primary: "#00ADEF",
+    // azul corporativo Tamaprint
+    primaryDark: "#0082C8",
+    primaryLight: "#33BFFF",
+    dark: "#231F20",
+    primary8: "rgba(0, 173, 239, 0.08)",
+    primary15: "rgba(0, 173, 239, 0.15)",
+    primary25: "rgba(0, 173, 239, 0.25)",
+    primary40: "rgba(0, 173, 239, 0.40)"
+  },
+  // Slate scale (superficies de dashboards de monitoreo).
+  // Complementa a `gray` (neutro) cuando se necesita un tinte azul-frío.
+  slate: {
+    50: "#F8FAFC",
+    100: "#F1F5F9",
+    200: "#E2E8F0",
+    300: "#CBD5E1",
+    400: "#94A3B8",
+    500: "#64748B",
+    600: "#475569",
+    700: "#334155",
+    800: "#1E293B",
+    900: "#0F172A"
+  },
   // Telemetría (dashboards de monitoreo — NO marca)
   // Semántica universal de operación: verde=ok, rojo=falla, ámbar=transición.
   // Usar SOLO en superficies de dashboard/observabilidad, nunca en CTAs ni feedback de marca.
@@ -158,6 +186,41 @@ const e = {
     divider: "rgba(255,255,255,0.20)",
     effectiveMode: "dark"
   },
+  // Dashboard claro — superficie operativa con tinte slate (Mission Control).
+  dashboard: {
+    background: "#F1F5F9",
+    // slate-100
+    surface: "#FFFFFF",
+    text: {
+      primary: "#0F172A",
+      // slate-900
+      secondary: "#64748B",
+      // slate-500
+      disabled: "#94A3B8"
+      // slate-400
+    },
+    border: "#E2E8F0",
+    // slate-200
+    divider: "#E2E8F0",
+    effectiveMode: "light"
+  },
+  // Dashboard oscuro — superficie para sidebars/topbars de monitoreo.
+  dashboardDark: {
+    background: "#171717",
+    // erieBlack
+    surface: "#1E1E1E",
+    text: {
+      primary: "#F1F5F9",
+      // slate-100
+      secondary: "#94A3B8",
+      // slate-400
+      disabled: "#64748B"
+      // slate-500
+    },
+    border: "rgba(255, 255, 255, 0.07)",
+    divider: "rgba(255, 255, 255, 0.12)",
+    effectiveMode: "dark"
+  },
   // Alias legacy — 'volt' renombrado internamente a mintCream
   volt: {
     background: e.mintCream,
@@ -230,7 +293,7 @@ const e = {
       border: e.tints.moderateBlue15
     }
   }
-}, p = (r) => t[r], x = (r) => ({
+}, p = (r) => t[r], h = (r) => ({
   ...t[r],
   components: i
 }), a = {
@@ -383,7 +446,7 @@ const e = {
       fontFamily: a.fontFamily.code
     }
   }
-}, h = {
+}, x = {
   // Clases de texto para uso directo
   text: {
     display: "font-black leading-none tracking-tighter",
@@ -472,7 +535,7 @@ const e = {
     cardMd: 320,
     cardLg: 400
   }
-}, u = {
+}, y = {
   // Espaciado interno de componentes (más generoso) - UNIDADES MUI (x8px)
   padding: {
     button: {
@@ -542,7 +605,7 @@ const e = {
     glow: "none"
     // Sin glow — Brand Book §sombras
   }
-}, l = {
+}, c = {
   width: {
     none: "0",
     thin: "1px",
@@ -559,7 +622,7 @@ const e = {
     full: "9999px"
     // buttons, badges, chips, search
   }
-}, c = {
+}, l = {
   dropdown: 1e3,
   sticky: 1020,
   fixed: 1030,
@@ -593,8 +656,8 @@ const e = {
   textVariants: n,
   spacing: o,
   shadows: d,
-  borders: l,
-  zIndex: c,
+  borders: c,
+  zIndex: l,
   transitions: g,
   breakpoints: s
 }, f = (r) => ({
@@ -636,9 +699,9 @@ const e = {
 export {
   m as AI4U_DESIGN_TOKENS,
   e as AI4U_PALETTE,
-  l as BORDER_TOKENS,
+  c as BORDER_TOKENS,
   s as BREAKPOINT_TOKENS,
-  u as COMPONENT_SPACING,
+  y as COMPONENT_SPACING,
   i as COMPONENT_VARIANTS,
   t as CONTRAST_PAIRS,
   d as SHADOW_TOKENS,
@@ -647,10 +710,10 @@ export {
   n as TEXT_VARIANTS,
   g as TRANSITION_TOKENS,
   a as TYPOGRAPHY_TOKENS,
-  h as TYPOGRAPHY_UTILITIES,
-  c as Z_INDEX_TOKENS,
+  x as TYPOGRAPHY_UTILITIES,
+  l as Z_INDEX_TOKENS,
   f as createAI4UTokens,
-  x as useComponentColors,
+  h as useComponentColors,
   p as useContrastColors
 };
 //# sourceMappingURL=index.js.map
