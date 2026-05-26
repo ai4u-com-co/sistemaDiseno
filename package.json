@@ -23,6 +23,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "prepare": "vite build",
     "preview": "vite",
     "typecheck": "tsc --noEmit"
   },
