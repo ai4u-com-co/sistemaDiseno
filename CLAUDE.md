@@ -20,7 +20,7 @@ El historial vive en el **changelog-service central**.
 
 ```
 MCP tool: add_changelog_entry({
-  clientId: "tamaprint",
+  clientId: "ai4u",
   appId: "design-system",
   appName: "AI4U Design System",   // solo la primera vez
   bump: "patch",                    // patch | minor | major
