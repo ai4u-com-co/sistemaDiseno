@@ -44,9 +44,8 @@ const ServiceCrossLink: React.FC<ServiceCrossLinkProps> = (props) => {
     return (
       <Box className={className} sx={{ display: 'inline-flex', alignItems: 'center', gap: 1 }}>
         <ContextualLink
-          to={`/servicios#${serviceSlug}`}
+          href={`/servicios#${serviceSlug}`}
           variant="inline"
-          trackingLabel={`service_cross_link_${serviceSlug}`}
           ariaLabel={`Conoce más sobre ${serviceName}`}
         >
           <SmallText sx={{ fontWeight: 400 }}>
@@ -87,9 +86,8 @@ const ServiceCrossLink: React.FC<ServiceCrossLinkProps> = (props) => {
             variant="filled" 
           />
           <ContextualLink
-            to={`/servicios#${serviceSlug}`}
+            href={`/servicios#${serviceSlug}`}
             variant="accent"
-            trackingLabel={`service_detailed_${serviceSlug}`}
             ariaLabel={`Conoce el servicio ${serviceName}`}
           >
             <SmallText sx={{ fontWeight: 400, fontSize: '0.9rem' }}>
@@ -122,9 +120,8 @@ const ServiceCrossLink: React.FC<ServiceCrossLinkProps> = (props) => {
               Caso real:
             </SmallText>
             <ContextualLink
-              to={`/casos-de-uso#${caseStudy.slug}`}
+              href={`/casos-de-uso#${caseStudy.slug}`}
               variant="subtle"
-              trackingLabel={`case_from_service_${serviceSlug}_to_${caseStudy.slug}`}
               ariaLabel={`Ver caso de uso en ${caseStudy.sector} con ${caseStudy.client}`}
             >
               <SmallText sx={{ fontWeight: 400, fontSize: '0.8rem' }}>

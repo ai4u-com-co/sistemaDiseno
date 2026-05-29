@@ -330,6 +330,7 @@ export const useColorMode = () => useContext(ColorModeContext);
 // Proveedor del tema con toggle
 export const ThemeProvider: React.FC<{children?: ReactNode}> = ({ children }) => {
 	const [mode, setMode] = useState<PaletteMode>(() => {
+		if (typeof window === 'undefined') return 'light';
 		const saved = localStorage.getItem('ai4u-theme-mode');
 		return (saved === 'dark' || saved === 'light') ? saved : 'light';
 	});
@@ -337,15 +338,17 @@ export const ThemeProvider: React.FC<{children?: ReactNode}> = ({ children }) =>
 	const toggleColorMode = useCallback(() => {
 		setMode(prev => {
 			const next = prev === 'light' ? 'dark' : 'light';
-			localStorage.setItem('ai4u-theme-mode', next);
-			document.documentElement.setAttribute('data-theme', next);
+			if (typeof window !== 'undefined') {
+				localStorage.setItem('ai4u-theme-mode', next);
+				document.documentElement.setAttribute('data-theme', next);
+			}
 			return next;
 		});
 	}, []);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', mode);
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [mode]);
 
 	const colorMode = useMemo(() => ({ mode, toggleColorMode }), [mode, toggleColorMode]);
 	const theme = useMemo(() => createAI4UTheme(mode), [mode]);

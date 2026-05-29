@@ -36,6 +36,11 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
+  "peerDependenciesMeta": {
+    "react-helmet-async": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -45,7 +50,6 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "react-helmet-async": "^3.0.0",
-    "react-router-dom": "^7.15.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vite-plugin-dts": "^4.2.1"

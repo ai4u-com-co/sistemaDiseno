@@ -40,7 +40,6 @@ export default defineConfig(({ command }) => {
             '@mui/icons-material',
             '@emotion/react',
             '@emotion/styled',
-            'react-router-dom',
           ],
           output: {
             preserveModules: false,

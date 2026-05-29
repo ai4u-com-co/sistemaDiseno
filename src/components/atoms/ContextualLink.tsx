@@ -1,54 +1,36 @@
-import React, { ReactNode } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { ElementType, ReactNode } from 'react';
 import { Link } from '@mui/material';
 import { useColors } from '../../hooks';
-import { analytics } from '../../utils/analytics';
 
-interface ContextualLinkProps {
-  to: string;
+export interface ContextualLinkProps {
+  /** URL de destino. */
+  href: string;
   variant?: 'subtle' | 'accent' | 'inline';
-  trackingLabel?: string;
   children?: ReactNode;
   className?: string;
   ariaLabel?: string;
+  /**
+   * Componente de enlace del framework (ej: `Link` de next/link, `NavLink` de react-router-dom).
+   * Si se omite, usa `<a>` nativo.
+   *
+   * @example
+   * import NextLink from 'next/link';
+   * <ContextualLink href="/servicios" LinkComponent={NextLink}>...</ContextualLink>
+   */
+  LinkComponent?: ElementType;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-/**
- * ContextualLink - Componente para enlaces internos contextuales sutiles
- * 
- * Optimizado para SEO con anchor text semántico y tracking automático
- * Diseño hipermegaminimalista que respeta el sistema de colores AI4U
- * 
- * @example
- * <ContextualLink to="/servicios" variant="accent" trackingLabel="home_to_services">
- *   Conoce nuestros servicios de IA
- * </ContextualLink>
- */
-const ContextualLink: React.FC<ContextualLinkProps> = (props) => {
-  const {
-    to,
-    variant = 'subtle',
-    trackingLabel,
-    children,
-    className,
-    ariaLabel,
-  } = props;
+const ContextualLink: React.FC<ContextualLinkProps> = ({
+  href,
+  variant = 'subtle',
+  children,
+  className,
+  ariaLabel,
+  LinkComponent,
+  onClick,
+}) => {
   const colors = useColors();
-
-  const handleClick = () => {
-    if (trackingLabel) {
-      analytics.trackEvent({
-        action: 'internal_link_click',
-        category: 'navigation',
-        label: trackingLabel,
-        custom_parameters: {
-          from_page: window.location.pathname,
-          to_page: to,
-          link_variant: variant
-        }
-      });
-    }
-  };
 
   const getVariantStyles = () => {
     switch (variant) {
@@ -63,7 +45,7 @@ const ContextualLink: React.FC<ContextualLinkProps> = (props) => {
             color: colors.palette.success,
             borderBottomColor: colors.palette.success,
             transform: 'translateY(-1px)',
-          }
+          },
         };
       case 'inline':
         return {
@@ -71,31 +53,31 @@ const ContextualLink: React.FC<ContextualLinkProps> = (props) => {
           textDecoration: 'underline',
           textDecorationColor: colors.contrast.text.secondary,
           transition: 'all 0.3s ease',
-                  '&:hover': {
-          color: colors.palette.accent,
-          textDecorationColor: colors.palette.accent,
-        }
+          '&:hover': {
+            color: colors.palette.accent,
+            textDecorationColor: colors.palette.accent,
+          },
         };
       case 'subtle':
       default:
         return {
           color: colors.contrast.text.secondary,
           textDecoration: 'none',
-          borderBottom: `1px solid transparent`,
+          borderBottom: '1px solid transparent',
           transition: 'all 0.3s ease',
-                  '&:hover': {
-          color: colors.palette.accent,
-          borderBottomColor: colors.palette.accent,
-        }
+          '&:hover': {
+            color: colors.palette.accent,
+            borderBottomColor: colors.palette.accent,
+          },
         };
     }
   };
 
   return (
     <Link
-      component={RouterLink as React.ElementType}
-      to={to}
-      onClick={handleClick}
+      component={LinkComponent ?? 'a'}
+      href={href}
+      onClick={onClick}
       className={className}
       aria-label={ariaLabel}
       sx={getVariantStyles()}

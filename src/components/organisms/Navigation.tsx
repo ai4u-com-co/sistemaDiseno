@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { 
-  Box, 
+import React from 'react';
+import {
+  Box,
   Button,
   alpha,
   useTheme
@@ -34,7 +34,6 @@ const Navigation = ({
 }: NavigationProps) => {
   const colors = useColors();
   const theme = useTheme();
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleItemClick = (item: NavigationItem) => {
     if (onItemClick) {
@@ -167,8 +166,6 @@ const Navigation = ({
             key={item.id}
             onClick={() => handleItemClick(item)}
             sx={getButtonStyles(item)}
-            onMouseEnter={() => setHoveredItem(item.id)}
-            onMouseLeave={() => setHoveredItem(null)}
           >
             {item.label}
           </Button>
@@ -184,8 +181,6 @@ const Navigation = ({
           key={item.id}
           onClick={() => handleItemClick(item)}
           sx={getButtonStyles(item)}
-          onMouseEnter={() => setHoveredItem(item.id)}
-          onMouseLeave={() => setHoveredItem(null)}
         >
           {item.label}
         </Button>

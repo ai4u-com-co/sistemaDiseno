@@ -1,22 +1,21 @@
-import { default as React, ReactNode } from 'react';
-interface ContextualLinkProps {
-    to: string;
+import { default as React, ElementType, ReactNode } from 'react';
+export interface ContextualLinkProps {
+    /** URL de destino. */
+    href: string;
     variant?: 'subtle' | 'accent' | 'inline';
-    trackingLabel?: string;
     children?: ReactNode;
     className?: string;
     ariaLabel?: string;
+    /**
+     * Componente de enlace del framework (ej: `Link` de next/link, `NavLink` de react-router-dom).
+     * Si se omite, usa `<a>` nativo.
+     *
+     * @example
+     * import NextLink from 'next/link';
+     * <ContextualLink href="/servicios" LinkComponent={NextLink}>...</ContextualLink>
+     */
+    LinkComponent?: ElementType;
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
-/**
- * ContextualLink - Componente para enlaces internos contextuales sutiles
- *
- * Optimizado para SEO con anchor text semántico y tracking automático
- * Diseño hipermegaminimalista que respeta el sistema de colores AI4U
- *
- * @example
- * <ContextualLink to="/servicios" variant="accent" trackingLabel="home_to_services">
- *   Conoce nuestros servicios de IA
- * </ContextualLink>
- */
 declare const ContextualLink: React.FC<ContextualLinkProps>;
 export default ContextualLink;

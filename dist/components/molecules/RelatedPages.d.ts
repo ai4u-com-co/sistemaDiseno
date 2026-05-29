@@ -1,6 +1,6 @@
 import { default as React } from 'react';
 interface RelatedPageItem {
-    to: string;
+    href: string;
     label: string;
     context?: string;
     trackingLabel?: string;

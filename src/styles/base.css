@@ -32,11 +32,11 @@
   --ai4u-blue: #3daed1;         /* moderate blue */
   --ai4u-cadet-gray: #94989b;   /* cadet gray */
 
-  /* Estados funcionales */
-  --ai4u-success: #10B981;
-  --ai4u-error: #EF4444;
-  --ai4u-warning: #F59E0B;
-  --ai4u-info: #3B82F6;
+  /* Estados funcionales — inversión semántica AI4U: blue=success, orange=error */
+  --ai4u-success: #3DAED1;  /* moderateBlue */
+  --ai4u-error: #FF6E00;    /* hotOrange */
+  --ai4u-warning: #FF6E00;  /* hotOrange */
+  --ai4u-info: #3DAED1;     /* moderateBlue */
 }
 
 :root {

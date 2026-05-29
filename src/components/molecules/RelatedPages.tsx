@@ -4,7 +4,7 @@ import { SmallText, ContextualLink, NavigationDot } from '../atoms';
 import { useColors } from '../../hooks';
 
 interface RelatedPageItem {
-  to: string;
+  href: string;
   label: string;
   context?: string;
   trackingLabel?: string;
@@ -57,12 +57,11 @@ const RelatedPages: React.FC<RelatedPagesProps> = (props) => {
           sx={{ gap: 2, alignItems: 'center', flexWrap: 'wrap' }}
         >
           {limitedPages.map((page, index) => (
-            <Box key={page.to} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Box key={page.href} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Box>
                 <ContextualLink
-                  to={page.to}
+                  href={page.href}
                   variant="subtle"
-                  trackingLabel={page.trackingLabel || `related_${page.to.replace('/', '')}`}
                   ariaLabel={page.context || page.label}
                 >
                   <SmallText sx={{ fontWeight: 400, fontSize: '0.875rem' }}>
@@ -94,11 +93,10 @@ const RelatedPages: React.FC<RelatedPagesProps> = (props) => {
     return (
       <Stack spacing={3}>
         {limitedPages.map((page) => (
-          <Box key={page.to}>
+          <Box key={page.href}>
             <ContextualLink
-              to={page.to}
+              href={page.href}
               variant="subtle"
-              trackingLabel={page.trackingLabel || `related_${page.to.replace('/', '')}`}
               ariaLabel={page.context || page.label}
             >
               <SmallText sx={{ fontWeight: 400, fontSize: '0.875rem' }}>

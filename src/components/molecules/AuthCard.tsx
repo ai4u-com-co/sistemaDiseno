@@ -1,6 +1,6 @@
 import React, { useRef, useState, ReactNode } from 'react';
 import { Box } from '@mui/material';
-import { AI4U_PALETTE } from '../../tokens/palette';
+import { AI4U_PALETTE, SURFACE_PRESETS } from '../../tokens/palette';
 
 interface AuthCardProps {
   /** Slot para branding (logo + título + subtítulo). Renderizado encima del card. */
@@ -79,8 +79,8 @@ const AuthCard: React.FC<AuthCardProps> = ({
 
       <Box
         sx={{
-          backgroundColor: AI4U_PALETTE.dashboardDark.surface,
-          border: `1px solid ${AI4U_PALETTE.dashboardDark.border}`,
+          backgroundColor: SURFACE_PRESETS.dashboardDark.surface,
+          border: `1px solid ${SURFACE_PRESETS.dashboardDark.border}`,
           borderRadius: 0,
           p: '28px 28px 24px',
           animation: shake ? 'auth-shake 0.4s ease' : undefined,
@@ -98,7 +98,7 @@ const AuthCard: React.FC<AuthCardProps> = ({
             fontFamily: '"Necto Mono", monospace',
             fontSize: 9.5,
             fontWeight: 700,
-            color: AI4U_PALETTE.dashboardDark.text.secondary,
+            color: SURFACE_PRESETS.dashboardDark.text.secondary,
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
             mb: 2,
@@ -121,7 +121,7 @@ const AuthCard: React.FC<AuthCardProps> = ({
             border: `1px solid ${error ? errorColor : 'rgba(255,255,255,0.1)'}`,
             borderRadius: 0,
             p: '12px 14px',
-            color: AI4U_PALETTE.dashboardDark.text.primary,
+            color: SURFACE_PRESETS.dashboardDark.text.primary,
             fontSize: 14,
             outline: 'none',
             fontFamily: 'inherit',
