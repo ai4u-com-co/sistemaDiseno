@@ -13,11 +13,13 @@ export interface ChangelogPillProps {
     limit?: number;
     /** Tema visual. Por defecto "light". */
     mode?: 'light' | 'dark';
+    /** Alineación del popover respecto al botón. Por defecto 'right' (crece a la izquierda). */
+    align?: 'left' | 'right';
 }
 /**
  * Pill de changelog brutalista, MUI-free (React + inline styles).
  * Lee del servicio central (GET público) y muestra el historial en un popover.
  * Multitenant: `client` y `app` son requeridos.
  */
-export declare const ChangelogPill: ({ client, app, serviceUrl, limit, mode, }: ChangelogPillProps) => import("react/jsx-runtime").JSX.Element | null;
+export declare const ChangelogPill: ({ client, app, serviceUrl, limit, mode, align, }: ChangelogPillProps) => import("react/jsx-runtime").JSX.Element | null;
 export default ChangelogPill;

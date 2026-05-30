@@ -34,6 +34,8 @@ export interface ChangelogPillProps {
   limit?: number;
   /** Tema visual. Por defecto "light". */
   mode?: 'light' | 'dark';
+  /** Alineación del popover respecto al botón. Por defecto 'right' (crece a la izquierda). */
+  align?: 'left' | 'right';
 }
 
 const DEFAULT_SERVICE_URL = 'https://changelog-service-silk.vercel.app';
@@ -79,6 +81,7 @@ export const ChangelogPill = ({
   serviceUrl = DEFAULT_SERVICE_URL,
   limit = 8,
   mode = 'light',
+  align = 'right',
 }: ChangelogPillProps) => {
   const isLight = mode === 'light';
   const [data, setData] = useState<ChangelogResponse | null>(null);
@@ -159,7 +162,7 @@ export const ChangelogPill = ({
           style={{
             position: 'absolute',
             bottom: 'calc(100% + 8px)',
-            right: 0,
+            ...(align === 'left' ? { left: 0, right: 'auto' } : { right: 0, left: 'auto' }),
             zIndex: 9999,
             width: 340,
             maxHeight: 420,

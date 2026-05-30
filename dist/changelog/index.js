@@ -1,7 +1,7 @@
 import { jsxs as i, jsx as s } from "react/jsx-runtime";
-import { useState as k, useRef as L, useEffect as w } from "react";
+import { useState as k, useRef as B, useEffect as w } from "react";
 import { A as e } from "../palette-uGOLprhd.js";
-const B = "https://changelog-service-silk.vercel.app", E = {
+const E = "https://changelog-service-silk.vercel.app", A = {
   feat: e.moderateBlue,
   // funcionalidad nueva → success/info
   fix: e.hotOrange,
@@ -10,7 +10,7 @@ const B = "https://changelog-service-silk.vercel.app", E = {
   chore: e.cadetGray,
   docs: e.cadetGray
 };
-function A(o) {
+function F(o) {
   if (!o.committed_at) return o.date;
   const n = new Date(o.committed_at);
   if (isNaN(n.getTime())) return o.date;
@@ -22,30 +22,31 @@ function A(o) {
   });
   return `${o.date} · ${r}`;
 }
-function F(o) {
+function T(o) {
   const n = o.replace(/\s*Co-Authored-By:[^\n]*/gi, "").trim(), r = n.match(/^([a-z]+)(?:\([^)]*\))?!?:\s*(.+)$/i);
   return r ? { prefix: r[1].toLowerCase(), text: r[2] } : { prefix: "chore", text: n };
 }
-const O = ({
+const j = ({
   client: o,
   app: n,
-  serviceUrl: r = B,
-  limit: h = 8,
-  mode: C = "light"
+  serviceUrl: r = E,
+  limit: p = 8,
+  mode: C = "light",
+  align: R = "right"
 }) => {
   var S, v;
-  const c = C === "light", [a, x] = k(null), [f, y] = k(!1), u = L(null);
+  const c = C === "light", [a, x] = k(null), [f, y] = k(!1), u = B(null);
   w(() => {
     const t = r.replace(/\/$/, "");
     let l = !0;
-    return fetch(`${t}/api/changelog/${o}/${n}?limit=${h}`).then((p) => p.json()).then((p) => {
-      l && x(p);
+    return fetch(`${t}/api/changelog/${o}/${n}?limit=${p}`).then((h) => h.json()).then((h) => {
+      l && x(h);
     }).catch(() => {
       l && x(null);
     }), () => {
       l = !1;
     };
-  }, [r, o, n, h]), w(() => {
+  }, [r, o, n, p]), w(() => {
     if (!f) return;
     function t(l) {
       u.current && !u.current.contains(l.target) && y(!1);
@@ -54,7 +55,7 @@ const O = ({
   }, [f]);
   const m = ((v = (S = a == null ? void 0 : a.entries) == null ? void 0 : S[0]) == null ? void 0 : v.version) ?? null;
   if (!m) return null;
-  const d = c ? e.black : e.white, b = c ? e.white : e.black, R = `6px 6px 0px ${d}`, g = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
+  const d = c ? e.black : e.white, b = c ? e.white : e.black, z = `6px 6px 0px ${d}`, g = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
   return /* @__PURE__ */ i("div", { ref: u, style: { position: "relative", display: "inline-block" }, children: [
     /* @__PURE__ */ i(
       "button",
@@ -103,7 +104,7 @@ const O = ({
         style: {
           position: "absolute",
           bottom: "calc(100% + 8px)",
-          right: 0,
+          ...R === "left" ? { left: 0, right: "auto" } : { right: 0, left: "auto" },
           zIndex: 9999,
           width: 340,
           maxHeight: 420,
@@ -112,7 +113,7 @@ const O = ({
           color: d,
           border: `1px solid ${d}`,
           borderRadius: 0,
-          boxShadow: R
+          boxShadow: z
         },
         children: [
           /* @__PURE__ */ i(
@@ -156,12 +157,12 @@ const O = ({
                         "v",
                         t.version
                       ] }),
-                      /* @__PURE__ */ s("span", { style: { fontSize: 11, color: e.cadetGray, fontFamily: g }, children: A(t) })
+                      /* @__PURE__ */ s("span", { style: { fontSize: 11, color: e.cadetGray, fontFamily: g }, children: F(t) })
                     ]
                   }
                 ),
-                /* @__PURE__ */ s("ul", { style: { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 3 }, children: t.changes.map((l, p) => {
-                  const { prefix: $, text: z } = F(l), G = E[$] ?? e.cadetGray;
+                /* @__PURE__ */ s("ul", { style: { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 3 }, children: t.changes.map((l, h) => {
+                  const { prefix: $, text: G } = T(l), L = A[$] ?? e.cadetGray;
                   return /* @__PURE__ */ i("li", { style: { fontSize: 12, lineHeight: 1.5 }, children: [
                     /* @__PURE__ */ s(
                       "span",
@@ -171,7 +172,7 @@ const O = ({
                           padding: "1px 5px",
                           marginRight: 5,
                           borderRadius: 0,
-                          background: G,
+                          background: L,
                           color: e.white,
                           fontSize: 10,
                           fontWeight: 700,
@@ -180,16 +181,16 @@ const O = ({
                         children: $
                       }
                     ),
-                    /* @__PURE__ */ s("span", { style: { color: c ? e.gray[600] : e.gray[300] }, children: z })
-                  ] }, p);
+                    /* @__PURE__ */ s("span", { style: { color: c ? e.gray[600] : e.gray[300] }, children: G })
+                  ] }, h);
                 }) })
               ]
             },
             t.id
           )) }),
-          a.total > h && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
+          a.total > p && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
             "+",
-            a.total - h,
+            a.total - p,
             " entradas más"
           ] })
         ]
@@ -198,6 +199,6 @@ const O = ({
   ] });
 };
 export {
-  O as ChangelogPill
+  j as ChangelogPill
 };
 //# sourceMappingURL=index.js.map
