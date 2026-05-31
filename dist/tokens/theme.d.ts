@@ -69,6 +69,16 @@ export declare const AI4U_DESIGN_TOKENS: {
         readonly cadetGray: "#94989B";
         readonly white: "#FFFFFF";
         readonly black: "#171717";
+        readonly extended: {
+            readonly neonBlaze: "#ff6e00";
+            readonly digitalCoral: "#FF7477";
+            readonly frostSignal: "#DFF7EB";
+            readonly grapheneBlack: "#0A0A0A";
+            readonly quantumBlue: "#1FA9F6";
+            readonly techSlate: "#7D848B";
+            readonly cyberOlive: "#eaf4eb";
+            readonly deepNeuralTeal: "#2B7A78";
+        };
         readonly gray: {
             readonly 50: "#F9F9F9";
             readonly 100: "#F5F5F5";
@@ -168,7 +178,7 @@ export declare const AI4U_DESIGN_TOKENS: {
     readonly typography: {
         readonly fontFamily: {
             readonly primary: "\"Red Hat Display\", sans-serif";
-            readonly code: "\"Necto Mono\", monospace";
+            readonly code: "\"Necto Mono\", \"Space Mono\", monospace";
         };
         readonly fontWeight: {
             readonly light: 300;
@@ -256,19 +266,19 @@ export declare const AI4U_DESIGN_TOKENS: {
                 readonly fontWeight: 900;
                 readonly lineHeight: 0.8;
                 readonly letterSpacing: "-0.06em";
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             };
         };
         readonly label: {
             readonly main: {
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
                 readonly fontSize: "0.875rem";
                 readonly fontWeight: 400;
                 readonly letterSpacing: "0.1em";
                 readonly opacity: 0.8;
             };
             readonly secondary: {
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
                 readonly fontSize: "0.75rem";
                 readonly fontWeight: 400;
                 readonly letterSpacing: "0.05em";
@@ -317,7 +327,7 @@ export declare const AI4U_DESIGN_TOKENS: {
                 readonly fontSize: "0.875rem";
                 readonly fontWeight: 400;
                 readonly lineHeight: 1.4;
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             };
         };
     };
@@ -481,6 +491,16 @@ export declare const createAI4UTokens: (mode: "light" | "dark") => {
         readonly cadetGray: "#94989B";
         readonly white: "#FFFFFF";
         readonly black: "#171717";
+        readonly extended: {
+            readonly neonBlaze: "#ff6e00";
+            readonly digitalCoral: "#FF7477";
+            readonly frostSignal: "#DFF7EB";
+            readonly grapheneBlack: "#0A0A0A";
+            readonly quantumBlue: "#1FA9F6";
+            readonly techSlate: "#7D848B";
+            readonly cyberOlive: "#eaf4eb";
+            readonly deepNeuralTeal: "#2B7A78";
+        };
         readonly gray: {
             readonly 50: "#F9F9F9";
             readonly 100: "#F5F5F5";
@@ -580,7 +600,7 @@ export declare const createAI4UTokens: (mode: "light" | "dark") => {
     typography: {
         readonly fontFamily: {
             readonly primary: "\"Red Hat Display\", sans-serif";
-            readonly code: "\"Necto Mono\", monospace";
+            readonly code: "\"Necto Mono\", \"Space Mono\", monospace";
         };
         readonly fontWeight: {
             readonly light: 300;
@@ -668,19 +688,19 @@ export declare const createAI4UTokens: (mode: "light" | "dark") => {
                 readonly fontWeight: 900;
                 readonly lineHeight: 0.8;
                 readonly letterSpacing: "-0.06em";
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             };
         };
         readonly label: {
             readonly main: {
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
                 readonly fontSize: "0.875rem";
                 readonly fontWeight: 400;
                 readonly letterSpacing: "0.1em";
                 readonly opacity: 0.8;
             };
             readonly secondary: {
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
                 readonly fontSize: "0.75rem";
                 readonly fontWeight: 400;
                 readonly letterSpacing: "0.05em";
@@ -729,7 +749,7 @@ export declare const createAI4UTokens: (mode: "light" | "dark") => {
                 readonly fontSize: "0.875rem";
                 readonly fontWeight: 400;
                 readonly lineHeight: 1.4;
-                readonly fontFamily: "\"Necto Mono\", monospace";
+                readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             };
         };
     };

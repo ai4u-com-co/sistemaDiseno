@@ -81,30 +81,31 @@ const getComponentsOverrides = (mode: PaletteMode): Components<Theme> => {
 		MuiButton: {
 			styleOverrides: {
 				root: ({ theme }) => ({
-					borderRadius: '9999px',
-					fontWeight: 400,
+					borderRadius: 0, // Brutalist Zero Radius
+					fontWeight: 700,
 					textTransform: 'none',
 					boxShadow: 'none',
-					padding: theme.spacing(1.25, 2.5),
-					transition: 'all 0.2s ease-in-out',
+					padding: theme.spacing(1.5, 3),
+					transition: 'all 0.2s steps(4, end)', // Snappy Industrial Transition
 					border: 'none',
 				}),
 				outlined: {
-					borderWidth: '1px',
-					borderColor: isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)',
+					borderWidth: '2px',
+					borderColor: isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white,
 					color: isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white,
 					'&:hover': {
-						backgroundColor: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
+						backgroundColor: isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white,
 						borderColor: isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white,
-						borderWidth: '1px',
+						color: isLight ? AI4U_PALETTE.white : AI4U_PALETTE.black,
+						borderWidth: '2px',
 					},
 				},
 				text: {
 					color: isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white,
-					fontWeight: 400,
+					fontWeight: 700,
 					textDecoration: 'none',
 					'&:hover': {
-						backgroundColor: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.08)',
+						backgroundColor: isLight ? AI4U_PALETTE.tints.erieBlack8 : 'rgba(255,255,255,0.08)',
 					},
 				},
 			},
@@ -116,13 +117,15 @@ const getComponentsOverrides = (mode: PaletteMode): Components<Theme> => {
 						color:           isLight ? AI4U_PALETTE.white     : AI4U_PALETTE.erieBlack,
 						'&:hover': {
 							backgroundColor: isLight ? '#2A2A2A' : AI4U_PALETTE.gray[200],
-							boxShadow: SHADOW_TOKENS.sm,
+							transform: 'translate(-2px, -2px)',
+							boxShadow: isLight ? '4px 4px 0px 0px rgba(0,0,0,0.3)' : '4px 4px 0px 0px rgba(255,255,255,0.3)',
 						},
 					},
 				},
 				{
 					props: { variant: 'outlined', color: 'primary' },
 					style: {
+						borderWidth: '2px',
 						borderColor: isLight ? AI4U_PALETTE.erieBlack : AI4U_PALETTE.white,
 						color:       isLight ? AI4U_PALETTE.erieBlack : AI4U_PALETTE.white,
 						'&:hover': {
@@ -136,12 +139,14 @@ const getComponentsOverrides = (mode: PaletteMode): Components<Theme> => {
 		MuiCard: {
 			styleOverrides: {
 				root: {
-					borderRadius: 16, // 1rem — Brand Book §radii (the workhorse)
-					backgroundColor: isLight ? AI4U_PALETTE.white : AI4U_PALETTE.gray[800],
-					border: `1px solid ${isLight ? AI4U_PALETTE.tints.erieBlack10 : 'rgba(255,255,255,0.08)'}`,
-					boxShadow: SHADOW_TOKENS.sm,
+					borderRadius: 0, // Brutalist Zero Radius
+					backgroundColor: isLight ? AI4U_PALETTE.white : AI4U_PALETTE.black,
+					border: `1px solid ${isLight ? AI4U_PALETTE.black : AI4U_PALETTE.white}`,
+					boxShadow: 'none',
+					transition: 'all 0.2s steps(4, end)',
 					'&:hover': {
-						boxShadow: SHADOW_TOKENS.md,
+						transform: 'translate(-4px, -4px)',
+						boxShadow: isLight ? `8px 8px 0px ${AI4U_PALETTE.black}` : `8px 8px 0px ${AI4U_PALETTE.white}`,
 					},
 				},
 			},
@@ -306,7 +311,7 @@ const createAI4UTheme = (mode: PaletteMode): Theme => {
 		typography,
 		components: getComponentsOverrides(mode),
 		shape: {
-			borderRadius: 16, // 1rem — Brand Book §radii
+			borderRadius: 0, // Brutalist zero radius — aligned with components
 		},
 		shadows: getCustomShadows(),
 	});

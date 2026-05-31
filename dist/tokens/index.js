@@ -1,10 +1,10 @@
-import { a as t, A as r } from "../palette-uGOLprhd.js";
-import { C as h, S as u, u as y, b as T } from "../palette-uGOLprhd.js";
+import { a as t, A as r } from "../palette-Cg2N1Fyc.js";
+import { C as h, S as u, u as y, b as T } from "../palette-Cg2N1Fyc.js";
 const n = {
   // Familias de fuentes
   fontFamily: {
     primary: '"Red Hat Display", sans-serif',
-    code: '"Necto Mono", monospace'
+    code: '"Necto Mono", "Space Mono", monospace'
   },
   // Pesos de fuente - Bold & Minimal
   fontWeight: {

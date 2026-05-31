@@ -6,6 +6,16 @@ export declare const AI4U_PALETTE: {
     readonly cadetGray: "#94989B";
     readonly white: "#FFFFFF";
     readonly black: "#171717";
+    readonly extended: {
+        readonly neonBlaze: "#ff6e00";
+        readonly digitalCoral: "#FF7477";
+        readonly frostSignal: "#DFF7EB";
+        readonly grapheneBlack: "#0A0A0A";
+        readonly quantumBlue: "#1FA9F6";
+        readonly techSlate: "#7D848B";
+        readonly cyberOlive: "#eaf4eb";
+        readonly deepNeuralTeal: "#2B7A78";
+    };
     readonly gray: {
         readonly 50: "#F9F9F9";
         readonly 100: "#F5F5F5";

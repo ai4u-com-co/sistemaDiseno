@@ -1,7 +1,7 @@
 export declare const TYPOGRAPHY_TOKENS: {
     readonly fontFamily: {
         readonly primary: "\"Red Hat Display\", sans-serif";
-        readonly code: "\"Necto Mono\", monospace";
+        readonly code: "\"Necto Mono\", \"Space Mono\", monospace";
     };
     readonly fontWeight: {
         readonly light: 300;
@@ -89,19 +89,19 @@ export declare const TEXT_VARIANTS: {
             readonly fontWeight: 900;
             readonly lineHeight: 0.8;
             readonly letterSpacing: "-0.06em";
-            readonly fontFamily: "\"Necto Mono\", monospace";
+            readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
         };
     };
     readonly label: {
         readonly main: {
-            readonly fontFamily: "\"Necto Mono\", monospace";
+            readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             readonly fontSize: "0.875rem";
             readonly fontWeight: 400;
             readonly letterSpacing: "0.1em";
             readonly opacity: 0.8;
         };
         readonly secondary: {
-            readonly fontFamily: "\"Necto Mono\", monospace";
+            readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
             readonly fontSize: "0.75rem";
             readonly fontWeight: 400;
             readonly letterSpacing: "0.05em";
@@ -150,7 +150,7 @@ export declare const TEXT_VARIANTS: {
             readonly fontSize: "0.875rem";
             readonly fontWeight: 400;
             readonly lineHeight: 1.4;
-            readonly fontFamily: "\"Necto Mono\", monospace";
+            readonly fontFamily: "\"Necto Mono\", \"Space Mono\", monospace";
         };
     };
 };

@@ -3,7 +3,7 @@ export const TYPOGRAPHY_TOKENS = {
   // Familias de fuentes
   fontFamily: {
     primary: '"Red Hat Display", sans-serif',
-    code: '"Necto Mono", monospace',
+    code: '"Necto Mono", "Space Mono", monospace',
   },
   
   // Pesos de fuente - Bold & Minimal

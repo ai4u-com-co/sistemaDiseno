@@ -12,6 +12,18 @@ export const AI4U_PALETTE = {
   white:        '#FFFFFF',   // Superficies elevadas (cards)
   black:        '#171717',   // Alias → Erie Black (backward compat)
 
+  // ── Colores secundarios y acentos oficiales del Brand Identity ──
+  extended: {
+    neonBlaze:      '#ff6e00',  // Más ácido, más intenso. Ideal para dark UI y botones activos
+    digitalCoral:   '#FF7477',  // Más limpio y vibrante. Ideal para dashboards humanos o wellness
+    frostSignal:    '#DFF7EB',  // Más frío y sintético. Ideal para fondos con estética futurista
+    grapheneBlack:  '#0A0A0A',  // Negro profundo, absoluto. Para interfaces con estética cyber
+    quantumBlue:    '#1FA9F6',  // Azul eléctrico, más saturado. Transmite data y conectividad
+    techSlate:      '#7D848B',  // Gris técnico con tinte metálico. Para bordes, skeletons, sliders
+    cyberOlive:     '#eaf4eb',  // Verde lima metálico. Para resaltar en tecnología verde
+    deepNeuralTeal: '#2B7A78',  // Teal saturado para sistemas autónomos y telemetría de IA
+  },
+
   // Escala de grises internos (uso en MUI internals)
   gray: {
     50:  '#F9F9F9',

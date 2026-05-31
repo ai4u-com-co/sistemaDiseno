@@ -62,7 +62,7 @@ const Swatch = ({ color, label }: { color: string; label: string }) => (
 const Demo = () => {
   const [activeSection, setActiveSection] = useState('all');
 
-  const sections = ['all', 'tokens', 'typography', 'buttons', 'components'];
+  const sections = ['all', 'tokens', 'logos', 'typography', 'buttons', 'components'];
 
   return (
     <Box sx={{ minHeight: '100vh', backgroundColor: 'background.default', color: 'text.primary' }}>
@@ -176,6 +176,74 @@ const Demo = () => {
                 🟠 <strong>Orange = error/danger</strong> — no usar rojo &nbsp;&nbsp;
                 🔵 <strong>Blue = success/info</strong> — no usar verde
               </SmallText>
+            </Box>
+          </Section>
+        )}
+
+        {/* ── LOGOS DE MARCA ──────────────────────────────────────── */}
+        {(activeSection === 'all' || activeSection === 'logos') && (
+          <Section title="logos oficiales de marca">
+            <Box sx={{ mb: 5 }}>
+              <SmallText sx={{ opacity: 0.4, mb: 3, fontFamily: 'monospace', letterSpacing: '0.1em' }}>
+                MATRIZ DE LOGOTIPOS OFICIALES AI4U (v1, v2, v3, ISOTIPO)
+              </SmallText>
+
+              <Grid container spacing={4}>
+                {(['v1', 'v2', 'v3', 'isotipo'] as const).map((version) => (
+                  <Grid item xs={12} key={version}>
+                    <Box sx={{ 
+                      p: 3, 
+                      border: '1px solid', 
+                      borderColor: 'divider',
+                      backgroundColor: 'background.paper',
+                    }}>
+                      <SmallText sx={{ fontWeight: 700, mb: 2, fontFamily: 'monospace', textTransform: 'uppercase' }}>
+                        Variante: {version}
+                      </SmallText>
+                      
+                      <Grid container spacing={2}>
+                        {([
+                          { key: 'negro', label: 'Negro', bg: '#EAF4EB' },
+                          { key: 'crema', label: 'Crema', bg: '#171717' },
+                          { key: 'naranja', label: 'Naranja', bg: '#171717' },
+                          { key: 'azul', label: 'Azul', bg: '#EAF4EB' },
+                          { key: 'gris', label: 'Gris', bg: '#171717' },
+                        ] as const).map(({ key, label, bg }) => (
+                          <Grid item xs={12} sm={6} md={2.4} key={key}>
+                            <Box sx={{ 
+                              p: 2, 
+                              backgroundColor: bg,
+                              border: '1px solid',
+                              borderColor: 'divider',
+                              display: 'flex', 
+                              flexDirection: 'column', 
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              minHeight: 100,
+                              gap: 1
+                            }}>
+                              <Logo 
+                                version={version} 
+                                colorVariant={key} 
+                                size={version === 'isotipo' ? 'medium' : 'small'} 
+                              />
+                              <SmallText sx={{ 
+                                fontSize: '0.65rem', 
+                                opacity: 0.6, 
+                                fontFamily: 'monospace',
+                                color: bg === '#171717' ? '#FFFFFF' : '#171717',
+                                mt: 1
+                              }}>
+                                {label}
+                              </SmallText>
+                            </Box>
+                          </Grid>
+                        ))}
+                      </Grid>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
             </Box>
           </Section>
         )}
