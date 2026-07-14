@@ -3,10 +3,17 @@ import { Card as MuiCard, CardContent, CardProps as MuiCardProps, styled, Box } 
 import { useColors } from '../../hooks';
 import { AI4U_PALETTE } from '../../tokens/palette';
 import { TEXT_VARIANTS } from '../../tokens/typography';
+import { BORDER_TOKENS } from '../../tokens/theme';
+
+interface DashboardCardColors {
+  background: string;
+  text: string;
+  border: string;
+}
 
 interface CardProps extends Omit<MuiCardProps, 'variant'> {
   children?: ReactNode;
-  variant?: 'default' | 'elevated' | 'outlined' | 'industrial';
+  variant?: 'default' | 'elevated' | 'outlined' | 'industrial' | 'dashboard';
   elevation?: number;
   showContent?: boolean;
   label?: string; // Metadata label e.g. "SECTION_01"
@@ -14,8 +21,12 @@ interface CardProps extends Omit<MuiCardProps, 'variant'> {
 }
 
 const StyledCard = styled(MuiCard, {
-  shouldForwardProp: (prop) => prop !== 'cardVariant' && prop !== 'forceMode',
-})<{ cardVariant?: CardProps['variant']; forceMode?: 'light' | 'dark' }>(({ theme, cardVariant, forceMode }) => {
+  shouldForwardProp: (prop) => prop !== 'cardVariant' && prop !== 'forceMode' && prop !== 'dashboardColors',
+})<{
+  cardVariant?: CardProps['variant'];
+  forceMode?: 'light' | 'dark';
+  dashboardColors?: DashboardCardColors;
+}>(({ theme, cardVariant, forceMode, dashboardColors }) => {
   const isLight = forceMode ? forceMode === 'light' : theme.palette.mode === 'light';
 
   const baseStyles = {
@@ -30,6 +41,18 @@ const StyledCard = styled(MuiCard, {
   };
 
   switch (cardVariant) {
+    // Variant para consumidores tipo dashboard (Mission Control): esquinas
+    // suaves y colores conscientes de la superficie/tema actual (via
+    // useColors/contrast) en vez del blanco/negro puro brutalista, pensado
+    // para el sitio de marketing. No reemplaza default/elevated/outlined/industrial.
+    case 'dashboard':
+      return {
+        ...baseStyles,
+        borderRadius: BORDER_TOKENS.radius.sm,
+        backgroundColor: dashboardColors?.background ?? baseStyles.backgroundColor,
+        color: dashboardColors?.text ?? baseStyles.color,
+        border: `1px solid ${dashboardColors?.border ?? baseStyles.border}`,
+      };
     case 'elevated':
       return {
         ...baseStyles,
@@ -92,11 +115,16 @@ export const Card = ({
   ...props
 }: CardProps) => {
   const colors = useColors();
+  const dashboardColors: DashboardCardColors | undefined =
+    variant === 'dashboard'
+      ? { background: colors.contrast.surface, text: colors.contrast.text.primary, border: colors.contrast.border }
+      : undefined;
   return (
-    <StyledCard 
-      cardVariant={variant} 
-      elevation={elevation} 
-      forceMode={colors.effectiveMode} 
+    <StyledCard
+      cardVariant={variant}
+      elevation={elevation}
+      forceMode={colors.effectiveMode}
+      dashboardColors={dashboardColors}
       sx={sx}
       {...props}
     >

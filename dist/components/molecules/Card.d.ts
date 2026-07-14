@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { CardProps as MuiCardProps } from '@mui/material';
 interface CardProps extends Omit<MuiCardProps, 'variant'> {
     children?: ReactNode;
-    variant?: 'default' | 'elevated' | 'outlined' | 'industrial';
+    variant?: 'default' | 'elevated' | 'outlined' | 'industrial' | 'dashboard';
     elevation?: number;
     showContent?: boolean;
     label?: string;

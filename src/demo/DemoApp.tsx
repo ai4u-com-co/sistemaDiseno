@@ -190,7 +190,7 @@ const Demo = () => {
 
               <Grid container spacing={4}>
                 {(['v1', 'v2', 'v3', 'isotipo'] as const).map((version) => (
-                  <Grid item xs={12} key={version}>
+                  <Grid size={12} key={version}>
                     <Box sx={{ 
                       p: 3, 
                       border: '1px solid', 
@@ -209,7 +209,7 @@ const Demo = () => {
                           { key: 'azul', label: 'Azul', bg: '#EAF4EB' },
                           { key: 'gris', label: 'Gris', bg: '#171717' },
                         ] as const).map(({ key, label, bg }) => (
-                          <Grid item xs={12} sm={6} md={2.4} key={key}>
+                          <Grid size={{ xs: 12, sm: 6, md: 2.4 }} key={key}>
                             <Box sx={{ 
                               p: 2, 
                               backgroundColor: bg,
