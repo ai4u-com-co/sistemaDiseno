@@ -1,5 +1,11 @@
 // Atoms - Componentes básicos reutilizables
 export { default as Button } from './Button';
+export { default as TextField } from './TextField';
+export type { TextFieldProps } from './TextField';
+export { default as Textarea } from './Textarea';
+export type { TextareaProps } from './Textarea';
+export { default as Select } from './Select';
+export type { SelectProps } from './Select';
 export { default as Typography, Giant, H1, H2, H3, H4, H5, H6, BodyText, SmallText, CodeText } from './Typography';
 export { default as Logo } from './Logo';
 export { default as GeometricIcon } from './GeometricIcon';
