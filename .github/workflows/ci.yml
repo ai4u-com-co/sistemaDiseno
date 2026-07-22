@@ -24,3 +24,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Verify dist/ matches committed build
+        run: |
+          if ! git diff --quiet -- dist; then
+            echo "::error::dist/ está desactualizado respecto al build fresco. Corre 'npm run build' y commitea el resultado antes de publicar/taguear."
+            git diff --stat -- dist
+            exit 1
+          fi
