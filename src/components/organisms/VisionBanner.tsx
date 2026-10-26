@@ -81,7 +81,6 @@ const VisionBanner: React.FC<VisionBannerProps> = ({
               fontWeight: 700,
               color: colors.contrast.text.secondary,
               letterSpacing: '0.25em',
-              textTransform: 'uppercase',
             }}
           >
             {label}
@@ -140,7 +139,6 @@ const VisionBanner: React.FC<VisionBannerProps> = ({
                       fontSize: 10,
                       fontWeight: 600,
                       letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
                       color: p.color,
                     }}
                   >

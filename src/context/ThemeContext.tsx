@@ -205,7 +205,6 @@ const getComponentsOverrides = (mode: PaletteMode): Components<Theme> => {
 					color: isLight ? AI4U_PALETTE.erieBlack : AI4U_PALETTE.white,
 					fontWeight: 600,
 					letterSpacing: '0.06em',
-					textTransform: 'uppercase' as const,
 					fontSize: '0.75rem',
 				},
 			},

@@ -34,6 +34,7 @@
     "dev": "vite build --watch",
     "preview": "vite",
     "typecheck": "tsc --noEmit",
+    "check:caps": "node scripts/check-no-uppercase.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
