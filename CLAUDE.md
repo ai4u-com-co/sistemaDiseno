@@ -42,6 +42,19 @@ Tailwind; el design system se adapta a ellas, no al revés.
 **La regla que se verifica automáticamente:** ninguna pantalla puede producir scroll
 horizontal a 375px. El agente `responsive-verifier` lo comprueba en la URL real.
 
+## Texto: nada en mayúscula sostenida
+
+Regla de todo el ecosistema desde octubre de 2026, por una recomendación de accesibilidad: el texto en mayúscula sostenida
+es más lento de leer (dislexia, baja visión) y algunos lectores de pantalla lo deletrean.
+
+- **Prohibido** en componentes, tokens y CSS: `text-transform: uppercase`, `textTransform: 'uppercase'`, `small-caps` y
+  `.toUpperCase()` sobre una cadena entera. Tampoco se escribe el texto en mayúsculas en el código.
+- Se escribe con capitalización normal: primera letra de la frase, nombres propios y siglas sueltas (API, NIT, QR).
+- La jerarquía se hace con tamaño, peso y la fuente mono de las etiquetas, no con mayúsculas. El espaciado entre letras
+  de las etiquetas mono va bajo (≈ .02em): el ancho espaciado solo tenía sentido para mayúsculas.
+- Los títulos llevan `line-height` ≥ 1: las minúsculas tienen colas (p, g, y) y con 0,8–0,9 las líneas se pisan.
+- `npm run check:caps` lo vigila y corre en CI. Si una app consumidora necesita otra cosa, que lo decida en su capa, no aquí.
+
 ## Versionado — obligatorio antes de cada commit
 
 El historial vive en el **changelog-service central**.

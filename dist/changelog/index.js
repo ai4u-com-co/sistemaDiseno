@@ -30,29 +30,29 @@ const j = ({
   client: o,
   app: n,
   serviceUrl: r = E,
-  limit: p = 8,
+  limit: f = 8,
   mode: C = "light",
   align: R = "right"
 }) => {
   var S, v;
-  const c = C === "light", [a, x] = k(null), [f, y] = k(!1), u = B(null);
+  const c = C === "light", [a, x] = k(null), [p, y] = k(!1), u = B(null);
   w(() => {
     const t = r.replace(/\/$/, "");
     let l = !0;
-    return fetch(`${t}/api/changelog/${o}/${n}?limit=${p}`).then((h) => h.json()).then((h) => {
+    return fetch(`${t}/api/changelog/${o}/${n}?limit=${f}`).then((h) => h.json()).then((h) => {
       l && x(h);
     }).catch(() => {
       l && x(null);
     }), () => {
       l = !1;
     };
-  }, [r, o, n, p]), w(() => {
-    if (!f) return;
+  }, [r, o, n, f]), w(() => {
+    if (!p) return;
     function t(l) {
       u.current && !u.current.contains(l.target) && y(!1);
     }
     return document.addEventListener("mousedown", t), () => document.removeEventListener("mousedown", t);
-  }, [f]);
+  }, [p]);
   const m = ((v = (S = a == null ? void 0 : a.entries) == null ? void 0 : S[0]) == null ? void 0 : v.version) ?? null;
   if (!m) return null;
   const d = c ? e.black : e.white, b = c ? e.white : e.black, z = `6px 6px 0px ${d}`, g = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
@@ -96,7 +96,7 @@ const j = ({
         ]
       }
     ),
-    f && a && /* @__PURE__ */ i(
+    p && a && /* @__PURE__ */ i(
       "div",
       {
         role: "dialog",
@@ -125,7 +125,6 @@ const j = ({
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: "0.06em",
-                textTransform: "uppercase",
                 color: e.cadetGray,
                 fontFamily: g
               },
@@ -188,9 +187,9 @@ const j = ({
             },
             t.id
           )) }),
-          a.total > p && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
+          a.total > f && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
             "+",
-            a.total - p,
+            a.total - f,
             " entradas más"
           ] })
         ]
