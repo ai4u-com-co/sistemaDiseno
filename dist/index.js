@@ -4737,7 +4737,6 @@ const Al = V.fontFamily.code, _l = {
           color: t ? b.erieBlack : b.white,
           fontWeight: 600,
           letterSpacing: "0.06em",
-          textTransform: "uppercase",
           fontSize: "0.75rem"
         }
       }
@@ -7296,7 +7295,6 @@ const Ai = (e) => {
               fontSize: 10,
               fontWeight: 700,
               letterSpacing: "0.15em",
-              textTransform: "uppercase",
               color: a
             },
             children: n
@@ -7442,7 +7440,6 @@ const Ai = (e) => {
         fontSize: 13,
         letterSpacing: "0.22em",
         color: a ?? (o === "dark" ? "#F1F5F9" : "#0F172A"),
-        textTransform: "uppercase",
         lineHeight: 1
       },
       children: t
@@ -7456,7 +7453,6 @@ const Ai = (e) => {
         fontSize: 9,
         color: s ?? (o === "dark" ? "#64748B" : "#94A3B8"),
         letterSpacing: "0.18em",
-        textTransform: "uppercase",
         mt: 0.5
       },
       children: r
@@ -8733,7 +8729,7 @@ const fd = async (e, t) => {
         /* @__PURE__ */ i(d, { sx: { mb: 4 }, children: r.map((l, u) => /* @__PURE__ */ f(bd, { children: [
           /* @__PURE__ */ f(d, { sx: { display: "flex", alignItems: "center", gap: 2 }, children: [
             /* @__PURE__ */ i(P, { sx: { ...re.label.secondary, opacity: 0.5 }, children: String(u + 1).padStart(2, "0") }),
-            /* @__PURE__ */ i(P, { sx: { fontWeight: 700, textTransform: "uppercase" }, children: l.name })
+            /* @__PURE__ */ i(P, { sx: { fontWeight: 700 }, children: l.name })
           ] }),
           /* @__PURE__ */ f(P, { sx: { fontWeight: 900, fontFamily: "monospace" }, children: [
             "$",
@@ -8765,7 +8761,6 @@ const fd = async (e, t) => {
   margin: 0,
   padding: 0,
   color: "inherit",
-  textTransform: "uppercase",
   [t.breakpoints.down("sm")]: {
     fontSize: e === "compact" ? "2.5rem" : e === "large" ? "4rem" : "3.5rem"
   }
@@ -10146,7 +10141,6 @@ const op = ({
                 fontWeight: 700,
                 color: ct.dashboardDark.text.secondary,
                 letterSpacing: "0.22em",
-                textTransform: "uppercase",
                 mb: 2
               },
               children: [
@@ -10993,7 +10987,7 @@ const op = ({
           /* @__PURE__ */ i(
             vt,
             {
-              label: e.quality.toUpperCase(),
+              label: e.quality,
               size: "small",
               sx: {
                 backgroundColor: c(e.quality) + "20",
@@ -12615,8 +12609,7 @@ const op = ({
           fontSize: "0.7rem",
           letterSpacing: "0.2em",
           color: r.contrast.text.primary,
-          opacity: 0.35,
-          textTransform: "uppercase"
+          opacity: 0.35
         }, children: a }, a)) }),
         /* @__PURE__ */ i(
           Tn,
@@ -12703,8 +12696,7 @@ const op = ({
                       fontSize: 10,
                       fontWeight: 700,
                       color: c.contrast.text.secondary,
-                      letterSpacing: "0.25em",
-                      textTransform: "uppercase"
+                      letterSpacing: "0.25em"
                     },
                     children: e
                   }
@@ -12766,7 +12758,6 @@ const op = ({
                       fontSize: 10,
                       fontWeight: 600,
                       letterSpacing: "0.12em",
-                      textTransform: "uppercase",
                       color: l.color
                     },
                     children: l.label
@@ -12829,8 +12820,7 @@ const op = ({
                   fontSize: 10,
                   color: a.contrast.text.disabled,
                   mt: 0.125,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase"
+                  letterSpacing: "0.12em"
                 },
                 children: r
               }
@@ -12882,7 +12872,6 @@ const op = ({
                 fontSize: 12,
                 letterSpacing: "0.2em",
                 color: u,
-                textTransform: "uppercase",
                 lineHeight: 1
               },
               children: e.title
@@ -12896,7 +12885,6 @@ const op = ({
                 fontSize: 9,
                 color: m,
                 letterSpacing: "0.15em",
-                textTransform: "uppercase",
                 mt: 0.5
               },
               children: e.subtitle
@@ -12926,8 +12914,7 @@ const op = ({
                     fontSize: 9,
                     color: b.telemetry[t.status],
                     fontWeight: 700,
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase"
+                    letterSpacing: "0.15em"
                   },
                   children: t.label
                 }
@@ -12946,8 +12933,7 @@ const op = ({
                 fontSize: 8.5,
                 fontWeight: 700,
                 color: m,
-                letterSpacing: "0.28em",
-                textTransform: "uppercase"
+                letterSpacing: "0.28em"
               },
               children: [
                 "◈ ",
@@ -13009,7 +12995,6 @@ const op = ({
                         fontFamily: '"Necto Mono", monospace',
                         fontSize: 8.5,
                         color: b.moderateBlue,
-                        textTransform: "uppercase",
                         letterSpacing: "0.08em",
                         mt: "1px",
                         opacity: 0.8
@@ -13064,7 +13049,6 @@ const op = ({
                         fontFamily: '"Necto Mono", monospace',
                         fontSize: 8,
                         color: m,
-                        textTransform: "uppercase",
                         letterSpacing: "0.1em",
                         mt: 0.375
                       },
@@ -13136,8 +13120,7 @@ const op = ({
                       fontFamily: '"Necto Mono", monospace',
                       fontSize: 8.5,
                       color: m,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase"
+                      letterSpacing: "0.12em"
                     },
                     children: a.caption
                   }
@@ -13150,8 +13133,7 @@ const op = ({
                       fontSize: 11,
                       fontWeight: 700,
                       color: a.accentColor ?? b.hotOrange,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase"
+                      letterSpacing: "0.18em"
                     },
                     children: a.label
                   }

@@ -2,9 +2,9 @@ import { default as React, ReactNode } from 'react';
 interface BrandingProps {
     /** Slot para el logo (img o componente). */
     logo?: ReactNode;
-    /** Título principal (uppercase, peso heavy). */
+    /** Título principal (peso heavy). */
     title: string;
-    /** Subtítulo (mono, uppercase, color secundario). */
+    /** Subtítulo (mono, color secundario). */
     subtitle?: string;
     /** Alineación. Default `left`. */
     align?: 'left' | 'center';
