@@ -32,6 +32,7 @@ const MetricValue = styled(Typography, {
   margin: 0,
   padding: 0,
   color: 'inherit',
+  textTransform: 'uppercase',
   [theme.breakpoints.down('sm')]: {
     fontSize: metricSize === 'compact'
       ? '2.5rem'

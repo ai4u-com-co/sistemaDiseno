@@ -1,6 +1,6 @@
 import { jsxs as i, jsx as s } from "react/jsx-runtime";
 import { useState as k, useRef as B, useEffect as w } from "react";
-import { A as e } from "../palette-Cg2N1Fyc.js";
+import { A as e } from "../palette-n0sYhpzg.js";
 const E = "https://changelog-service-silk.vercel.app", A = {
   feat: e.moderateBlue,
   // funcionalidad nueva → success/info
@@ -30,29 +30,29 @@ const j = ({
   client: o,
   app: n,
   serviceUrl: r = E,
-  limit: f = 8,
+  limit: p = 8,
   mode: C = "light",
   align: R = "right"
 }) => {
   var S, v;
-  const c = C === "light", [a, x] = k(null), [p, y] = k(!1), u = B(null);
+  const c = C === "light", [a, x] = k(null), [f, y] = k(!1), u = B(null);
   w(() => {
     const t = r.replace(/\/$/, "");
     let l = !0;
-    return fetch(`${t}/api/changelog/${o}/${n}?limit=${f}`).then((h) => h.json()).then((h) => {
+    return fetch(`${t}/api/changelog/${o}/${n}?limit=${p}`).then((h) => h.json()).then((h) => {
       l && x(h);
     }).catch(() => {
       l && x(null);
     }), () => {
       l = !1;
     };
-  }, [r, o, n, f]), w(() => {
-    if (!p) return;
+  }, [r, o, n, p]), w(() => {
+    if (!f) return;
     function t(l) {
       u.current && !u.current.contains(l.target) && y(!1);
     }
     return document.addEventListener("mousedown", t), () => document.removeEventListener("mousedown", t);
-  }, [p]);
+  }, [f]);
   const m = ((v = (S = a == null ? void 0 : a.entries) == null ? void 0 : S[0]) == null ? void 0 : v.version) ?? null;
   if (!m) return null;
   const d = c ? e.black : e.white, b = c ? e.white : e.black, z = `6px 6px 0px ${d}`, g = 'ui-monospace, "SFMono-Regular", Menlo, monospace';
@@ -96,7 +96,7 @@ const j = ({
         ]
       }
     ),
-    p && a && /* @__PURE__ */ i(
+    f && a && /* @__PURE__ */ i(
       "div",
       {
         role: "dialog",
@@ -125,6 +125,7 @@ const j = ({
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: "0.06em",
+                textTransform: "uppercase",
                 color: e.cadetGray,
                 fontFamily: g
               },
@@ -187,9 +188,9 @@ const j = ({
             },
             t.id
           )) }),
-          a.total > f && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
+          a.total > p && /* @__PURE__ */ i("div", { style: { padding: "8px 16px", fontSize: 11, color: e.cadetGray, fontStyle: "italic" }, children: [
             "+",
-            a.total - f,
+            a.total - p,
             " entradas más"
           ] })
         ]

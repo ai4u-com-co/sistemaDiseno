@@ -4,7 +4,7 @@ interface DashboardTopBarProps {
     logo?: ReactNode;
     /** Título principal del dashboard. */
     title: string;
-    /** Subtítulo / meta (mono). */
+    /** Subtítulo / meta (mono uppercase). */
     subtitle?: string;
     /** Slot para badges/indicadores secundarios (lado derecho, antes de actions). */
     badges?: ReactNode;

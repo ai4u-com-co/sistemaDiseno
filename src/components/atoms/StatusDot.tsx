@@ -9,7 +9,7 @@ interface StatusDotProps {
   status: TelemetryStatus;
   size?: number;          // px, default 8
   pulse?: boolean;        // override; por defecto pulsa en 'online' y 'starting'
-  label?: string;         // si se pasa, renderiza dot + label (mono)
+  label?: string;         // si se pasa, renderiza dot + label (uppercase mono)
   className?: string;
 }
 
@@ -72,6 +72,7 @@ const StatusDot: React.FC<StatusDotProps> = ({
           fontSize: 10,
           fontWeight: 700,
           letterSpacing: '0.15em',
+          textTransform: 'uppercase',
           color,
         }}
       >

@@ -1,3 +1,4 @@
+import { default as React } from 'react';
 export interface PeriodPreset {
     id: string;
     label: string;
@@ -37,5 +38,5 @@ export interface PeriodPickerProps {
  * `activePresetId` (el consumidor decide si eso implica "desactivar" el
  * preset activo).
  */
-export declare const PeriodPicker: ({ presets, activePresetId, onPresetChange, fromDate, toDate, onFromChange, onToChange, minDate, maxDate, showCustomRange, disabled, }: PeriodPickerProps) => import("react/jsx-runtime").JSX.Element;
+export declare const PeriodPicker: ({ presets, activePresetId, onPresetChange, fromDate, toDate, onFromChange, onToChange, minDate, maxDate, showCustomRange, disabled, }: PeriodPickerProps) => React.JSX.Element;
 export default PeriodPicker;

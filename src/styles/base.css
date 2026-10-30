@@ -161,6 +161,7 @@
   font-size: var(--ai4u-fs-xs);
   color: var(--ai4u-fg-2);
   letter-spacing: var(--ai4u-tracking-caption);
+  text-transform: uppercase;
   font-weight: var(--ai4u-fw-semibold);
 }
 .ai4u-mono { font-family: var(--ai4u-font-mono); letter-spacing: 0; }

@@ -2,7 +2,7 @@ import { default as React, ReactNode } from 'react';
 interface AuthCardProps {
     /** Slot para branding (logo + título + subtítulo). Renderizado encima del card. */
     branding?: ReactNode;
-    /** Etiqueta superior del card (mono, prefijo ◈). */
+    /** Etiqueta superior del card (mono uppercase, prefijo ◈). */
     label?: string;
     /** Placeholder del input. */
     placeholder?: string;

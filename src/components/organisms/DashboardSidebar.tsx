@@ -113,6 +113,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
             fontSize: 12,
             letterSpacing: '0.2em',
             color: textPrimary,
+            textTransform: 'uppercase',
             lineHeight: 1,
           }}
         >
@@ -125,6 +126,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               fontSize: 9,
               color: textSecondary,
               letterSpacing: '0.15em',
+              textTransform: 'uppercase',
               mt: 0.5,
             }}
           >
@@ -156,6 +158,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 color: AI4U_PALETTE.telemetry[statusBadge.status],
                 fontWeight: 700,
                 letterSpacing: '0.15em',
+                textTransform: 'uppercase',
               }}
             >
               {statusBadge.label}
@@ -177,6 +180,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 fontWeight: 700,
                 color: textSecondary,
                 letterSpacing: '0.28em',
+                textTransform: 'uppercase',
               }}
             >
               ◈ {group.label}
@@ -229,6 +233,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                         fontFamily: '"Necto Mono", monospace',
                         fontSize: 8.5,
                         color: AI4U_PALETTE.moderateBlue,
+                        textTransform: 'uppercase',
                         letterSpacing: '0.08em',
                         mt: '1px',
                         opacity: 0.8,
@@ -282,6 +287,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                   fontFamily: '"Necto Mono", monospace',
                   fontSize: 8,
                   color: textSecondary,
+                  textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   mt: 0.375,
                 }}
@@ -349,6 +355,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 fontSize: 8.5,
                 color: textSecondary,
                 letterSpacing: '0.12em',
+                textTransform: 'uppercase',
               }}
             >
               {signature.caption}
@@ -360,6 +367,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 fontWeight: 700,
                 color: signature.accentColor ?? AI4U_PALETTE.hotOrange,
                 letterSpacing: '0.18em',
+                textTransform: 'uppercase',
               }}
             >
               {signature.label}

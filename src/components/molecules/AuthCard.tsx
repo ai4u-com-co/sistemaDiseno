@@ -5,7 +5,7 @@ import { AI4U_PALETTE, SURFACE_PRESETS } from '../../tokens/palette';
 interface AuthCardProps {
   /** Slot para branding (logo + título + subtítulo). Renderizado encima del card. */
   branding?: ReactNode;
-  /** Etiqueta superior del card (mono, prefijo ◈). */
+  /** Etiqueta superior del card (mono uppercase, prefijo ◈). */
   label?: string;
   /** Placeholder del input. */
   placeholder?: string;
@@ -100,6 +100,7 @@ const AuthCard: React.FC<AuthCardProps> = ({
             fontWeight: 700,
             color: SURFACE_PRESETS.dashboardDark.text.secondary,
             letterSpacing: '0.22em',
+            textTransform: 'uppercase',
             mb: 2,
           }}
         >

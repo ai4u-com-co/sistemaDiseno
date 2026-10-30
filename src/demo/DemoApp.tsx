@@ -27,7 +27,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
       display: 'flex', alignItems: 'center', gap: 2, mb: 4,
       borderBottom: '1px solid', borderColor: 'divider', pb: 2,
     }}>
-      <SmallText sx={{ letterSpacing: '0.15em', opacity: 0.5 }}>
+      <SmallText sx={{ letterSpacing: '0.15em', opacity: 0.5, textTransform: 'uppercase' }}>
         {title}
       </SmallText>
     </Box>
@@ -197,7 +197,7 @@ const Demo = () => {
                       borderColor: 'divider',
                       backgroundColor: 'background.paper',
                     }}>
-                      <SmallText sx={{ fontWeight: 700, mb: 2, fontFamily: 'monospace' }}>
+                      <SmallText sx={{ fontWeight: 700, mb: 2, fontFamily: 'monospace', textTransform: 'uppercase' }}>
                         Variante: {version}
                       </SmallText>
                       

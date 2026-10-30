@@ -7,7 +7,7 @@ interface DashboardTopBarProps {
   logo?: ReactNode;
   /** Título principal del dashboard. */
   title: string;
-  /** Subtítulo / meta (mono). */
+  /** Subtítulo / meta (mono uppercase). */
   subtitle?: string;
   /** Slot para badges/indicadores secundarios (lado derecho, antes de actions). */
   badges?: ReactNode;
@@ -77,6 +77,7 @@ const DashboardTopBar: React.FC<DashboardTopBarProps> = ({
                 color: colors.contrast.text.disabled,
                 mt: 0.125,
                 letterSpacing: '0.12em',
+                textTransform: 'uppercase',
               }}
             >
               {subtitle}

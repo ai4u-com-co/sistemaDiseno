@@ -4,9 +4,9 @@ import { Box } from '@mui/material';
 interface BrandingProps {
   /** Slot para el logo (img o componente). */
   logo?: ReactNode;
-  /** Título principal (peso heavy). */
+  /** Título principal (uppercase, peso heavy). */
   title: string;
-  /** Subtítulo (mono, color secundario). */
+  /** Subtítulo (mono, uppercase, color secundario). */
   subtitle?: string;
   /** Alineación. Default `left`. */
   align?: 'left' | 'center';
@@ -54,6 +54,7 @@ const Branding: React.FC<BrandingProps> = ({
           fontSize: 13,
           letterSpacing: '0.22em',
           color: resolvedTitle,
+          textTransform: 'uppercase',
           lineHeight: 1,
         }}
       >
@@ -66,6 +67,7 @@ const Branding: React.FC<BrandingProps> = ({
             fontSize: 9,
             color: resolvedSubtitle,
             letterSpacing: '0.18em',
+            textTransform: 'uppercase',
             mt: 0.5,
           }}
         >
